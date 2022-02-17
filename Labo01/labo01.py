@@ -24,13 +24,7 @@ class LinearModel:
         return self.slope * x + self.intercept
 
     def calcCost(self, y_hat, y):
-        if len(y) != 0:
-            x = 0
-            for i in range(len(y)):
-                x += (y_hat[i] - y[i]) ** 2
-            return x / len(y)
-        else:
-            return 0
+        return np.sum(np.square(y_hat - y)) / len(y)
 
 model = LinearModel(1, 1.8)
 
@@ -54,12 +48,11 @@ class LinearRegression:
             new_w = w - alpha * ((-2 / n) * sum(x * (y - y_hat)))
             new_b = b - alpha * ((-2 / n) * sum(y - y_hat))
 
-            #print('new_w: ', new_w, 'difference new_w - w : ', abs(new_w - w), 'new_b:',new_b,  'difference new_b - b : ',abs(new_b - b))
-
             if (abs(w-new_w) < epsilon) and (abs(b - new_b) < epsilon):
                 # Show plot
-                Y_pred = w*dat.x.values + b
-                plot.plot([min(dat.x.values), max(dat.x.values)], [min(Y_pred), max(Y_pred)], color='red')
+                Y_pred = w * dat.x.values + b
+                #plot.plot([min(dat.x.values), max(dat.x.values)], [min(Y_pred), max(Y_pred)], color='red')
+                plot.plot(dat.x.values , Y_pred, color='red')
                 plot.show()
 
                 stop = True
