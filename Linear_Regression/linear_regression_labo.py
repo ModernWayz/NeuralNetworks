@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plot
 
 cols = ['x', 'y']
-dat = pd.read_csv("Labo01/data/train_fictief.csv", names=cols, header=None, sep=';')
+dat = pd.read_csv("Linear_Regression/data/train_fictief.csv", names=cols, header=None, sep=';')
 
 print(dat)
 

@@ -109,7 +109,7 @@ def plot(model, training_set):
   plt.legend()
   plt.show()
 
-training_set = read_labeled_csv('Labo01/data/train_fictief.csv')
+training_set = read_labeled_csv('Linear_Regression/data/train_fictief.csv')
 optimization_fn = LinearRegression(1e-2, 1e-5)
 best_fit = optimization_fn.perform(training_set)
 print(f'{best_fit.slope}*x + {best_fit.intercept}')

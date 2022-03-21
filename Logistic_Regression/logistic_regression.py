@@ -63,8 +63,8 @@ if __name__ == "__main__":
         return accuracy
 
 
-    testDat = pd.read_csv("Labo02/data/test.csv", header=None, sep=';')
-    trainDat = pd.read_csv("Labo02/data/train.csv", header=None, sep=';')
+    testDat = pd.read_csv("Logistic_Regression/data/test.csv", header=None, sep=';')
+    trainDat = pd.read_csv("Logistic_Regression/data/train.csv", header=None, sep=';')
 
     y_train = trainDat.iloc[:, 0]
     X_train = trainDat.iloc[:, 1:7]

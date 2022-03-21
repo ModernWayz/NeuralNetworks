@@ -159,3 +159,6 @@ docs/
 po/*~
 # RStudio Connect folder
 rsconnect/
+
+# Hide large data files
+Labo_Week_04/data/
