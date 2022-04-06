@@ -22,8 +22,8 @@ train_images, train_labels, test_images, test_labels = [], [], [], []
 for file in random.sample(os.listdir(DIR_TRAIN), len(os.listdir(DIR_TRAIN))):
     # Check if the file is a valid image
     if file.endswith(".jpg") or file.endswith(".png"):
-        # Check if the image is a dog or cat: 0 = cat, 1 = dog
-        label = 0 if file.startswith("cat") else 1 if file.startswith("dog") else None
+        # Check if the image is a dog or cat: 1 = cat, 0 = dog
+        label = 1 if file.startswith("cat") else 0 if file.startswith("dog") else None
         # If label is not found -> cancel image
         if label == None:
             continue
@@ -61,7 +61,7 @@ network.add(layers.Dense(1, activation='sigmoid'))
 # Compile the network on binary
 network.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
-# Prepare the image data: reshape with the length of the array and convert to float32
+# Prepare the image data: reshape with the length of the array (1 is greyscale) and convert to float32
 train_images = train_images.reshape((-1, IMAGE_SIZE, IMAGE_SIZE, 1)).astype('float32') / 255
 test_images = test_images.reshape((-1, IMAGE_SIZE, IMAGE_SIZE, 1)).astype('float32') / 255
 
