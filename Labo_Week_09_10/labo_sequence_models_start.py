@@ -1,3 +1,5 @@
+# Bronvermelding: https://machinelearningmastery.com/time-series-prediction-lstm-recurrent-neural-networks-python-keras/
+
 # Slide 5
 import pandas
 import matplotlib.pyplot as plt
